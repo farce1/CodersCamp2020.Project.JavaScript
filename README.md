@@ -1,8 +1,22 @@
 **UWAGA! Zaczynając pracę nad projektem — nie róbcie forka.
 Jedna osoba z zespołu (np. Mentor) powinna użyć przycisku `Use this template` i dodać innych członków zespołu jako Collaborators do tego repozytorium.**
 
-# CodersCamp 2020 - Projekt JavaScript
-**CodersCamp (coderscamp.edu.pl) - Największy otwarty kurs programowania webowego** 
+# Coders Camp 2020 | Projekt Zespołowy | JavaScript
+
+## Zespół projektowy
+
+Zespół pracował w ramach kursu [CodersCamp](CodersCamp.pl). 
+Aplikację wykonali uczestnicy kursu przy pomocy mentora.
+Zachęcamy do odwiedzenia profili członków zespołu, w celu zapoznania się z ich portfolio.
+
+**Mentor**: [Grzegorz Sztuczyński](github.com/farce1)
+
+**Uczestnicy**:
+- [Izabela Nowak](ggithub.com/In2106)
+- [Justyna Sobczak](github.com/s-justina) (Product Owner)
+- [Natalia Dębska](github.com/talcia) 
+- [Olaf Koziara](github.com/Olaf-Koziara) (Tech Lead)
+- [Miron Weltrowski](github.com/miron54) (Development Manager)
 
 Wykorzystanie asynchronicznego JavaScript oraz korzystanie z REST API.
 

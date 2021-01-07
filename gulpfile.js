@@ -6,7 +6,7 @@ const browserSync = require('browser-sync').create();
 //compile scss into css
 function style() {
   return gulp.src('./src/**/*.scss')
-    .pipe(concat('main.scss'))
+    .pipe(concat('styles.scss'))
     .pipe(sass().on('error',sass.logError))
     .pipe(gulp.dest('css'))
     .pipe(browserSync.stream());

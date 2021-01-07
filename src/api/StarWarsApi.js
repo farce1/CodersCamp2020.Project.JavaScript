@@ -7,12 +7,9 @@ const handleErrors = (response) => {
 };
 export const StarWarsApi = () => {
   return {
-    get({ mode, id }) {
-      console.log('id' + id);
-      return axios
-        .get(`https://swapi.dev/api/${mode}/${id}`)
-
-        .then((response) => ({ id: id, name: response.data.name }));
+    async get({ mode, id }) {
+      const response = await axios.get(`https://swapi.dev/api/${mode}/${id}`);
+      return { id: id, name: response.data.name };
     },
   };
 };

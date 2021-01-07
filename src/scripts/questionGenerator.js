@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { StarWarsApi } from '../api/StarWarsApi';
 import { getRandomInt } from '../helpers';
 
@@ -35,9 +36,13 @@ export const generateQuestions = async ({ mode, minId, maxId }) => {
       reader.onerror = (error) => reject(error);
     });
   const getImage = async () => {
-    return fetch(`../../static/assets/img/modes/${mode}/${rightAnswerId}.jpg`)
-      .then((response) => response.blob())
-      .then(async (imageBlob) => await toBase64(imageBlob));
+    return axios
+      .get(`../../static/assets/img/modes/${mode}/${rightAnswerId}.jpg`, {
+        responseType: 'blob',
+      })
+
+      .then(async (response) => await toBase64(response.data))
+      .catch((error) => console.log(error));
 
     await toBase64(blob);
   };

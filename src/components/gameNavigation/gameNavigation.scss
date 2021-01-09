@@ -1,0 +1,25 @@
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 30px;
+  height: 100px;
+  width: 65vw;
+  background-color: var(--nav-bg);
+  box-shadow: 0 0 50px var(--red-light);
+}
+
+.navigation .nav-btn{
+  margin-top: 15px;
+  border: none;
+  height: 70%;
+  background-color: var( --nav-bg);
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: var(--black-font);
+  cursor: pointer;
+}
+
+.navigation .clicked{
+  border-bottom: 7px solid var(--nav-underline);
+}

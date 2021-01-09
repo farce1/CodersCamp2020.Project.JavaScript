@@ -1,9 +1,10 @@
 @import 'main'; // opisanie głównych elementów
 @import 'mixins';
-
+@import 'normalize';
 @import 'app';
 
 
 // Components
 
 // ex. @import 'components/red-button-styles';
+@import 'src/components/buttonPlay/button-play';

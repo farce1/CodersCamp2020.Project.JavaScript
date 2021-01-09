@@ -1,9 +1,12 @@
 import axios from 'axios';
+
 import { StarWarsApi } from '../api/StarWarsApi';
 import { getRandomInt } from '../helpers';
+axios.defaults.validateStatus = function () {
+  return true;
+};
 
 export const generateQuestions = async ({ mode, minId, maxId }) => {
-  const starWarsApi = StarWarsApi();
   const randomIds = [];
   for (let x = 0; x < 4; x++) {
     let randomId;
@@ -15,7 +18,7 @@ export const generateQuestions = async ({ mode, minId, maxId }) => {
 
   const answers = await Promise.all(
     [...randomIds].map((id) => {
-      return starWarsApi.get({ mode: mode, id: id });
+      return StarWarsApi().get({ mode: mode, id: id });
     }),
   );
 
@@ -25,30 +28,18 @@ export const generateQuestions = async ({ mode, minId, maxId }) => {
     id: rightAnswerId,
     name: answers.find((answer) => answer.id === rightAnswerId).name,
   };
-  const toBase64 = (file) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        resolve(reader.result);
-      };
 
-      reader.onerror = (error) => reject(error);
-    });
-  const getImage = async () => {
-    return axios
-      .get(`../../static/assets/img/modes/${mode}/${rightAnswerId}.jpg`, {
-        responseType: 'blob',
-      })
-
-      .then(async (response) => await toBase64(response.data))
-      .catch((error) => console.log(error));
-
-    await toBase64(blob);
-  };
   return {
-    image: await getImage(),
     answers: answers,
     rightAnswer: { id: rightAnswerId, name: rightAnswer },
   };
+};
+
+export const getImageforRightAnswer = async (mode, rightAnswerId) => {
+  const response = await axios
+    .get(`../../static/assets/img/modes/people/2.jpg`, {
+      responseType: 'arraybuffer',
+    })
+    .catch((error) => console.log(error));
+  return Buffer.from(response.data).toString('base64');
 };

@@ -1,11 +1,7 @@
 import axios from 'axios';
 import {
-  fetch,
   generateAnswers,
-  getImag,
-  getImage,
   getImageforRightAnswer,
-  getQuestion,
 } from '../src/scripts/questionGenerator';
 describe('question generate function', () => {
   it('should return 4 answers and right answer', async () => {

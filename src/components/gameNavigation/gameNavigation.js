@@ -7,15 +7,16 @@ export const gameNavigation = (callback) => {
 <div class='nav-btn'>Starships</div>
 `;
 
-  function onClickHandler(btn) {
+  function onClickHandler(btn, callback) {
     Array.from(navigation.children).forEach(btn=>btn.classList.remove('clicked'));
-    btn.classList.add('clicked')
+    btn.classList.add('clicked');
+    callback && callback();
   }
 
   navigation.classList.add('navigation');
   navigation.innerHTML = gameNavigationTemplateHTML;
   document.body.appendChild(navigation);
   Array.from(navigation.children).forEach((btn) =>
-    btn.addEventListener('click', ()=>onClickHandler(btn)),
+    btn.addEventListener('click', ()=>onClickHandler(btn, callback)),
   );
 };

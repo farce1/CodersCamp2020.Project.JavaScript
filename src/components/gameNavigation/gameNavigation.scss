@@ -5,7 +5,7 @@
   height: 100px;
   width: 65vw;
   background-color: var(--nav-bg);
-  box-shadow: 0 0 50px var(--red-light);
+  box-shadow: 0 0 40px 4px var(--red-light);
 }
 
 .navigation .nav-btn{
@@ -16,7 +16,7 @@
   line-height: 60px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  color: var(--black-font);
+  color: var(--grey-font);
   cursor: pointer;
   transition: .3s;
 }
@@ -24,4 +24,6 @@
 .navigation .clicked{
   border-bottom: 6px solid var(--nav-underline);
   line-height: 50px;
+  color: var(--black-font);
+
 }

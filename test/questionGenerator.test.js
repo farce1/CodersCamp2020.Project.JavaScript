@@ -2,7 +2,8 @@ import axios from 'axios';
 import {
   generateAnswers,
   getImageforRightAnswer,
-} from '../src/scripts/questionGenerator';
+} from '../src/domain/functions/questionGenerator/questionGenerator';
+
 describe('question generate function', () => {
   it('should return 4 answers and right answer', async () => {
     const getSpySuccess = jest.spyOn(axios, 'get').mockImplementation(() => {

@@ -2,9 +2,6 @@ import axios from 'axios';
 
 import { StarWarsApi } from '../api/StarWarsApi';
 import { getRandomInt } from '../helpers';
-axios.defaults.validateStatus = function () {
-  return true;
-};
 
 export const generateAnswers = async ({ mode, minId, maxId }) => {
   const randomIds = [];

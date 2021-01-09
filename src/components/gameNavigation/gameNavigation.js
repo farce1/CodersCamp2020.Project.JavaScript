@@ -2,20 +2,20 @@ export const gameNavigation = (callback) => {
   const body = document.getElementsByTagName('body');
   const navigation = document.createElement('div');
   const gameNavigationTemplateHTML = `
-<button class='nav-btn clicked'>People</button>
-<button class='nav-btn'>Vehicles</button>
-<button class='nav-btn'>Starships</button>
+<div class='nav-btn clicked'>People</div>
+<div class='nav-btn'>Vehicles</div>
+<div class='nav-btn'>Starships</div>
 `;
 
-  function onClickHandler(e) {
-    const currentElement = e.target;
-    console.log(currentElement);
+  function onClickHandler(btn) {
+    Array.from(navigation.children).forEach(btn=>btn.classList.remove('clicked'));
+    btn.classList.add('clicked')
   }
-
-
-    // gameNavigation.addEventListener('click', onClickHandler);
 
   navigation.classList.add('navigation');
   navigation.innerHTML = gameNavigationTemplateHTML;
   document.body.appendChild(navigation);
+  Array.from(navigation.children).forEach((btn) =>
+    btn.addEventListener('click', ()=>onClickHandler(btn)),
+  );
 };

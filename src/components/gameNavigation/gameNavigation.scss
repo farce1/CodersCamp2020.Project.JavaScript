@@ -9,17 +9,19 @@
 }
 
 .navigation .nav-btn{
-  margin-top: 15px;
-  border: none;
-  height: 70%;
+  margin: 15px auto;
+  height: 60%;
   background-color: var( --nav-bg);
   font-size: 30px;
+  line-height: 60px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: var(--black-font);
   cursor: pointer;
+  transition: .3s;
 }
 
 .navigation .clicked{
-  border-bottom: 7px solid var(--nav-underline);
+  border-bottom: 6px solid var(--nav-underline);
+  line-height: 50px;
 }

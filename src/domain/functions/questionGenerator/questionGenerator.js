@@ -1,7 +1,7 @@
 import axios from 'axios';
+import { StarWarsApi } from '../../../api/StarWarsApi';
 
-import { StarWarsApi } from '../api/StarWarsApi';
-import { getRandomInt } from '../helpers';
+import { getRandomInt } from '../../../helpers';
 
 export const generateAnswers = async ({ mode, minId, maxId }) => {
   const randomIds = [];

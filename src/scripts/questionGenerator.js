@@ -6,7 +6,7 @@ axios.defaults.validateStatus = function () {
   return true;
 };
 
-export const generateQuestions = async ({ mode, minId, maxId }) => {
+export const generateAnswers = async ({ mode, minId, maxId }) => {
   const randomIds = [];
   for (let x = 0; x < 4; x++) {
     let randomId;
@@ -42,4 +42,22 @@ export const getImageforRightAnswer = async (mode, rightAnswerId) => {
     })
     .catch((error) => console.log(error));
   return Buffer.from(response.data).toString('base64');
+};
+
+export const getQuestion = async ({ mode, minId, maxId }) => {
+  const generatedAnswers = await generateAnswers({
+    mode: mode,
+    maxId: maxId,
+    minId: minId,
+  });
+  const base64Image = await getImageforRightAnswer(
+    mode,
+    generatedAnswers.rightAnswer.id,
+  );
+  const { answers, rightAnswer } = generatedAnswers;
+  return {
+    image: base64Image,
+    answers: answers,
+    rightAnswer: rightAnswer,
+  };
 };

@@ -7,7 +7,7 @@ const handleErrors = (response) => {
 };
 export const StarWarsApi = () => {
   return {
-    async get({ mode, id }) {
+    async get(mode, id) {
       const response = await axios.get(`https://swapi.dev/api/${mode}/${id}`);
       return { id: id, name: response.data.name };
     },

@@ -1,17 +1,18 @@
-export const buttonWhiteIcon = (label, iconPath, onClick) => {
+export const iconButton = (label, iconPath, onClick) => {
 
     const _label = label.toUpperCase();
     const _iconPath = iconPath.toString();
 
-    document.getElementById('swquiz-app').innerHTML = `
+    if(onClick){
+        iconButton.addEventListener('click', onClick);
+    }
+
+    const component = document.createElement('button');
+    component.innerHTML = `
         <button class="gameButton btnWhiteIcon">
             <img src="${_iconPath}" alt="button WhiteIcon"/>
             <label>${_label}</label>
         </button>
          `;
-
-    if(onClick){
-        buttonWhiteIcon.addEventListener('click', onClick);
-    }
-
+    return component;
 }

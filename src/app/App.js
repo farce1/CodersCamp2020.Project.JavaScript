@@ -1,4 +1,4 @@
-import {buttonWhiteIcon} from "../components/buttonWhiteIcon";
+import {iconButton} from "../components/buttonWhiteIcon";
 export const App = ({options}) => {
 }
 

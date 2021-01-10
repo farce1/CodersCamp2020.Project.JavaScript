@@ -1,9 +1,6 @@
 import axios from 'axios';
-import {
-  generateAnswers,
-  getImageforRightAnswer,
-} from '../src/domain/functions/questionGenerator/QuestionGenerator';
 import QuestionGenerator from '../src/domain/functions/questionGenerator/QuestionGenerator';
+
 const generator = new QuestionGenerator('people', 1, 12);
 describe('question generate function', () => {
   it('should return 4 answers and right answer', async () => {

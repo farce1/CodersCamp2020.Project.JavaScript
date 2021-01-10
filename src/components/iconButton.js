@@ -8,11 +8,10 @@ export const iconButton = (label, iconPath, onClick) => {
     }
 
     const component = document.createElement('button');
-    component.innerHTML = `
-        <button class="gameButton btnWhiteIcon">
-            <img src="${_iconPath}" alt="button WhiteIcon"/>
-            <label>${_label}</label>
-        </button>
+    component.className = "gameButton iconButton";
+    component.innerHTML = `   
+                <img src="${_iconPath}" alt="button WhiteIcon"/>
+                <label>${_label}</label>        
          `;
     return component;
 }

@@ -1,22 +1,28 @@
-export const gameNavigation = (callback) => {
-  const body = document.getElementsByTagName('body');
-  const navigation = document.createElement('div');
-  const gameNavigationTemplateHTML = `
-<div class='nav-btn clicked'>People</div>
-<div class='nav-btn'>Vehicles</div>
-<div class='nav-btn'>Starships</div>
+import { people, starships, vehicles } from '../../constants';
+
+export const gameNavigationTemplateHTML = `
+<div data-testid='${people}' class='nav-btn clicked'>People</div>
+<div data-testid='${vehicles}' class='nav-btn'>Vehicles</div>
+<div data-testid='${starships}' class='nav-btn'>Starships</div>
 `;
 
-  function onClickHandler(btn, callback) {
-    Array.from(navigation.children).forEach(btn=>btn.classList.remove('clicked'));
-    btn.classList.add('clicked');
-    callback && callback();
-  }
+export function onClickHandler(btn, callback) {
+  btn.classList.add('clicked');
+  callback && callback();
+}
+
+export const gameNavigation = (callback) => {
+  const navigation = document.createElement('div');
 
   navigation.classList.add('navigation');
+  navigation.setAttribute("data-testid", "html-navigation");
   navigation.innerHTML = gameNavigationTemplateHTML;
-  document.body.appendChild(navigation);
+  document.getElementById('swquiz-app').appendChild(navigation);
+
   Array.from(navigation.children).forEach((btn) =>
-    btn.addEventListener('click', ()=>onClickHandler(btn, callback)),
+    btn.addEventListener('click', ()=> {
+      Array.from(navigation.children).forEach(btn=>btn.classList.remove('clicked'));
+      onClickHandler(btn, callback)
+    }),
   );
 };

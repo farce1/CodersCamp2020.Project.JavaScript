@@ -29,6 +29,9 @@ export default class QuestionGenerator {
       const randomId = getRandomInt(this.minId, this.maxId);
       randomIds.add(randomId);
     }
+    const rightAnswerId = Array.from(randomIds)[
+      getRandomInt(0, randomIds.size)
+    ];
 
     const answers = await Promise.all(
       [...randomIds].map((id) => {
@@ -36,7 +39,6 @@ export default class QuestionGenerator {
       }),
     );
 
-    const rightAnswerId = randomIds[getRandomInt(0, randomIds.length)];
     const rightAnswer = {
       id: rightAnswerId,
       name: answers.find((answer) => answer.id === rightAnswerId).name,
@@ -44,7 +46,7 @@ export default class QuestionGenerator {
 
     return {
       answers: answers,
-      rightAnswer: { id: rightAnswerId, name: rightAnswer },
+      rightAnswer,
     };
   }
 

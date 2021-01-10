@@ -2,59 +2,58 @@ import axios from 'axios';
 import { StarWarsApi } from '../../../api/StarWarsApi';
 
 import { getRandomInt } from '../../../helpers';
+export default class QuestionGenerator {
+  constructor(mode, minId, maxId) {
+    this.mode = mode;
+    this.minId = minId;
+    this.maxId = maxId;
+  }
+  async generateQeustion() {
+    const generatedAnswers = await this.generateAnswers();
 
-export const generateAnswers = async ({ mode, minId, maxId }) => {
-  const randomIds = [];
-  for (let x = 0; x < 4; x++) {
-    let randomId;
-    do {
-      randomId = getRandomInt({ min: minId, max: maxId });
-    } while (randomIds.includes(randomId));
-    randomIds.push(randomId);
+    const base64Image = await this.getImageforRightAnswer(
+      mode,
+      generatedAnswers.rightAnswer.id,
+    );
+    const { answers, rightAnswer } = generatedAnswers;
+    return {
+      image: base64Image,
+      answers,
+      rightAnswer,
+    };
+  }
+  async generateAnswers() {
+    const randomIds = new Set();
+
+    while (randomIds.size < 4) {
+      const randomId = getRandomInt(this.minId, this.maxId);
+      randomIds.add(randomId);
+    }
+
+    const answers = await Promise.all(
+      [...randomIds].map((id) => {
+        return StarWarsApi().get(this.mode, id);
+      }),
+    );
+
+    const rightAnswerId = randomIds[getRandomInt(0, randomIds.length)];
+    const rightAnswer = {
+      id: rightAnswerId,
+      name: answers.find((answer) => answer.id === rightAnswerId).name,
+    };
+
+    return {
+      answers: answers,
+      rightAnswer: { id: rightAnswerId, name: rightAnswer },
+    };
   }
 
-  const answers = await Promise.all(
-    [...randomIds].map((id) => {
-      return StarWarsApi().get({ mode: mode, id: id });
-    }),
-  );
-
-  const rightAnswerId =
-    randomIds[getRandomInt({ min: 0, max: randomIds.length })];
-  const rightAnswer = {
-    id: rightAnswerId,
-    name: answers.find((answer) => answer.id === rightAnswerId).name,
-  };
-
-  return {
-    answers: answers,
-    rightAnswer: { id: rightAnswerId, name: rightAnswer },
-  };
-};
-
-export const getImageforRightAnswer = async (mode, rightAnswerId) => {
-  const response = await axios
-    .get(`../../static/assets/img/modes/people/2.jpg`, {
-      responseType: 'arraybuffer',
-    })
-    .catch((error) => console.log(error));
-  return Buffer.from(response.data).toString('base64');
-};
-
-export const getQuestion = async ({ mode, minId, maxId }) => {
-  const generatedAnswers = await generateAnswers({
-    mode: mode,
-    maxId: maxId,
-    minId: minId,
-  });
-  const base64Image = await getImageforRightAnswer(
-    mode,
-    generatedAnswers.rightAnswer.id,
-  );
-  const { answers, rightAnswer } = generatedAnswers;
-  return {
-    image: base64Image,
-    answers: answers,
-    rightAnswer: rightAnswer,
-  };
-};
+  async getImageforRightAnswer(rightAnswerId) {
+    const response = await axios
+      .get(`../../static/assets/img/modes/${this.mode}/${rightAnswerId}.jpg`, {
+        responseType: 'arraybuffer',
+      })
+      .catch((error) => console.log(error));
+    return Buffer.from(response.data).toString('base64');
+  }
+}

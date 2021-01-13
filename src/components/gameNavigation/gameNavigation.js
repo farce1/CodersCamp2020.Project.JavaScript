@@ -4,7 +4,7 @@ import { renderComponentIntoSelectedTag } from '../../utils/functions';
 export const gameNavigation = (callback) => {
   const navigation = document.createElement('div');
   createHtmlNavigationElement(navigation);
-  renderComponentIntoSelectedTag(navigation, 'swquiz-app');
+  renderComponentIntoSelectedTag(navigation, 'swquiz-header');
   addClickListenerForNavigationButtons(navigation, callback);
 };
 
@@ -19,20 +19,22 @@ function onClickHandler(btn, callback) {
   callback && callback();
 }
 
-const createHtmlNavigationElement= (navigation)=>{
+const createHtmlNavigationElement = (navigation) => {
   let navHtmlElement;
   navigation.classList.add('navigation');
-  navigation.setAttribute("data-testid", "html-navigation");
+  navigation.setAttribute('data-testid', 'html-navigation');
   navigation.innerHTML = gameNavigationTemplateHTML;
   navHtmlElement = navigation.innerHTML;
   return navHtmlElement;
 };
 
-const addClickListenerForNavigationButtons = (navigation, callback)=>{
+const addClickListenerForNavigationButtons = (navigation, callback) => {
   Array.from(navigation.children).forEach((btn) =>
-    btn.addEventListener('click', ()=> {
-      Array.from(navigation.children).forEach(btn=>btn.classList.remove('clicked'));
-      onClickHandler(btn, callback)
+    btn.addEventListener('click', () => {
+      Array.from(navigation.children).forEach((btn) =>
+        btn.classList.remove('clicked'),
+      );
+      onClickHandler(btn, callback);
     }),
   );
 };

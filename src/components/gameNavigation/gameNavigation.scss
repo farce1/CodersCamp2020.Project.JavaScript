@@ -1,34 +1,33 @@
 .navigation {
-  position: relative;
-  top: 50px;
-  left: 50px;
+  margin: auto;
   display: flex;
   justify-content: space-around;
   border-radius: 16px;
   height: 180px;
-  width: 65vw;
+  width: 60vw;
   background-color: var(--nav-bg);
-  box-shadow: 0px 4px 4px var(--internal-dark-shadow), 4px 4px 40px var(--external-red-shadow);
+  box-shadow: 0px 4px 4px var(--internal-dark-shadow),
+    4px 4px 40px var(--external-red-shadow);
 }
 
-.navigation .nav-btn{
+.navigation .nav-btn {
   margin: 15px auto;
   height: 60%;
-  background-color: var( --nav-bg);
+  background-color: var(--nav-bg);
   font-size: 42px;
   line-height: 150px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   color: var(--grey-font);
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.navigation .clicked{
+.navigation .clicked {
   border-bottom: 10px solid var(--nav-underline);
-  box-shadow: 0 4px 6px -6px var(--external-red-shadow),  0 4px 6px -6px var(--internal-dark-shadow);
+  box-shadow: 0 4px 6px -6px var(--external-red-shadow),
+    0 4px 6px -6px var(--internal-dark-shadow);
   border-radius: 4px;
   line-height: 140px;
   color: var(--black-font);
-
 }

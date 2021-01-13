@@ -9,6 +9,9 @@ describe('Test game navigation', () => {
     const swquizApp = document.createElement('div');
     swquizApp.setAttribute('id', 'swquiz-app');
     document.body.appendChild(swquizApp);
+    const swquizHeader = document.createElement('div');
+    swquizHeader.setAttribute('id', 'swquiz-header');
+    swquizApp.appendChild(swquizHeader);
     gameNavigation();
   });
 

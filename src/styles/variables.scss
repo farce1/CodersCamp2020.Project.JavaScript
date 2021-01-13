@@ -1,3 +1,12 @@
 // TUTAJ DODAJEMY ZMIENNE KOLORÓW
 
 // ex. $color-font--primary: #ffff;
+
+:root{
+  --black-font: #222;
+  --grey-font: #AAA;
+  --nav-bg: #FFF;
+  --internal-dark-shadow: rgba(0, 0, 0, 0.25);
+  --external-red-shadow: rgba(255, 0, 0, 0.9);
+  --nav-underline: rgba(255, 0, 0, 0.5);;
+}

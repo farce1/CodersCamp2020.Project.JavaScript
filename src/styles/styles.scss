@@ -2,8 +2,11 @@
 @import 'mixins';
 @import 'normalize';
 @import 'app';
+@import "variables";
 
 
 // Components
 
 // ex. @import 'components/red-button-styles';
+
+@import "../components/gameNavigation/gameNavigation";

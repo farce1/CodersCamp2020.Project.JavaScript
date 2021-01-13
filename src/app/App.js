@@ -1,6 +1,7 @@
-import {isCorrectAnswer} from "../domain/functions/isCorrectAnswer/isCorrectAnswer.js";
+import {iconButton} from "../components/iconButton";
 
 export const App = ({options}) => {
-}
+
+};
 
 

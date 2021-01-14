@@ -8,4 +8,4 @@ const humanPlayer = () => {
     return player
 }
 
-module.exports = humanPlayer;
+export default humanPlayer;

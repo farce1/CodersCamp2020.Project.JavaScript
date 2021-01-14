@@ -1,4 +1,4 @@
-const humanPlayer = require('../src/domain/players/HumanPlayer')
+import humanPlayer from '../src/domain/players/HumanPlayer';
 
 test('properly invoke function passed as an argument to askQuestion', () => {
     expect(humanPlayer().askQuestion(function(){return 2+2})).toBe(4);

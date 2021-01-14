@@ -3,5 +3,7 @@ export const buttonPlay = (label, onClick) => {
   if (onClick) {
     buttonPlay.addEventListener('click', onClick);
   }
-  document.getElementById('swquiz-app').innerHTML = buttonTemplateHTML;
+  return buttonTemplateHTML;
 };
+
+module.exports = buttonPlay;

@@ -1,8 +1,16 @@
 // Plik styli aplikacji
 
-body{
-  background-image: url("../../static/assets/ui/QuizBackground.png");
+body {
+  background-image: url('../../static/assets/ui/QuizBackground.png');
   background-repeat: no-repeat;
-  background-position: center;
+
   background-size: cover;
+}
+.header {
+  display: flex;
+}
+.logo {
+  // width: 485px;
+  // height: 228px;
+  margin: auto;
 }

@@ -1,17 +1,21 @@
-export const iconButton = (label, iconPath, onClick) => {
+const defaultFunction = () => 'default';
 
-    const _label = label.toUpperCase();
-    const _iconPath = iconPath.toString();
+export const iconButton = (text = 'text', icon, onClick = defaultFunction()) => {
 
-    if(onClick){
-        iconButton.addEventListener('click', onClick);
-    }
+    const _text = text.toUpperCase();
 
     const component = document.createElement('button');
-    component.className = "gameButton iconButton";
-    component.innerHTML = `   
-                <img src="${_iconPath}" alt="button WhiteIcon"/>
-                <label>${_label}</label>        
-         `;
+
+    component.className = 'iconButton';
+    component.innerText = _text;
+    component.onclick = onClick;
+
+    if (icon) {
+    const spanElement = document.createElement('span');
+    spanElement.className = 'button__icon';
+    spanElement.style.backgroundImage = `url("../static/assets/ui/icon-${icon}.png")`;
+    component.appendChild(spanElement);
+    }
+
     return component;
 }

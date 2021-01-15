@@ -4,7 +4,6 @@
     width: 37.5rem;
     height: 6.25rem;
     cursor: pointer;
-    text-transform: uppercase;
     font-family: 'Montserrat';
     font-size: 2.5rem;
     text-align: center;
@@ -17,6 +16,7 @@
 }
 
 .gameButton_play {
-    background: $color-button--primary;
-    color: $color-font--primary;
+    background: $color-buttonPlay--primary;
+    color: $color-font--buttonPlay;
+    text-transform: uppercase;
 }

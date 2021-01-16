@@ -20,7 +20,7 @@ describe('Test text timer', () => {
     ).toBeInTheDocument();
   });
 
-  it('start interval correctly', () => {
+  it('Should display time result correctly', () => {
     expect(setInterval).toHaveBeenCalled();
     jest.advanceTimersByTime(10000);
     expect(

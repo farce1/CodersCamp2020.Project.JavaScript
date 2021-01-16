@@ -16,7 +16,7 @@
 	&:active {
 		transform: scale(0.99);
 	}
-	&.iconButton__icon {
+	span {
 		color: black;
 		font-family: 'Montserrat', sans-serif;
 		font-size: 42px;
@@ -27,7 +27,8 @@
 		position: absolute;
 		text-align: center;
 		top: 24px;
-		width: 48px;
-		width: 100%;
+		width: 64px;
+
 	}
 }
+

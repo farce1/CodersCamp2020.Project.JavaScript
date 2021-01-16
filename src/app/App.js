@@ -5,7 +5,7 @@ import { CommonModal } from '../components/commonModal/CommonModal';
 import { hideElement, renderComponentIntoSelectedTagID } from '../utils/functions';
 
 export const App = ({ options }) => {
-/*  renderComponentIntoSelectedTagID - funkcja do renderowania komponentu w odpowiednim miejscu np.:
-  renderComponentIntoSelectedTagID(gameNavigation(()=>{console.log('tu podaję callback')}), 'swquiz-header');
-  renderComponentIntoSelectedTagID(CommonModal('kotek', hideElement), 'swquiz-app');*/
+  // renderComponentIntoSelectedTagID - funkcja do renderowania komponentu w odpowiednim miejscu np.:
+  // renderComponentIntoSelectedTagID(gameNavigation(()=>{console.log('tu podaję callback')}), 'swquiz-header');
+  renderComponentIntoSelectedTagID(CommonModal('kotek', hideElement).show(), 'swquiz-app');
 };

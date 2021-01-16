@@ -5,9 +5,4 @@ export const renderComponentIntoSelectedTagID = (component, targetID) => {
   document.getElementById(`${targetID}`).appendChild(component);
 };
 
-export const hideElement = (component)=>{
-  if(!component){
-    return;
-  }
-  component.classList.add('hidden');
-};
+export const hideElement = (modal) =>modal ? modal.hide(): null;

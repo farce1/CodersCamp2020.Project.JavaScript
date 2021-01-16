@@ -6,28 +6,24 @@ import {
 } from '../src/utils/functions';
 import { CommonModal } from '../src/components/commonModal/CommonModal';
 import userEvent from '@testing-library/user-event';
+import { mockedDomStructure } from './__mocks__/templatesForTests';
 
 describe('Test common modal', () => {
   beforeAll(() => {
-    document.body.innerHTML = `<div id="swquiz-app">
-      <div id="app-structure">
-        <div id="swquiz-header" class="header">
-        </div>
-      </div>
-    </div>`;
+    document.body.innerHTML = mockedDomStructure;
     renderComponentIntoSelectedTagID(
-      CommonModal('kotek', hideElement),
+      CommonModal('kotek', hideElement).show(),
       'swquiz-app',
     );
   });
 
-  it('Should to render correctly', () => {
+  it('Should be visible', () => {
     expect(
       getByTestId(document.documentElement, 'html-modal'),
     ).toBeInTheDocument();
   });
 
-  it('Should to hide correctly', () => {
+  it('should hide modal when hide called', () => {
     userEvent.click(getByTestId(document.documentElement, 'html-modal'));
     const modal = getByTestId(document.documentElement, 'html-modal');
     expect(modal.classList.contains('hidden'));

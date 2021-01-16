@@ -1,17 +1,25 @@
 import humanPlayer from '../src/domain/players/HumanPlayer';
 
-test('properly invoke function passed as an argument to askQuestion', () => {
+describe('askQuestion', () => {
+    it('properly invoke function passed as an argument', () => { 
     expect(humanPlayer().askQuestion(function(){return 2+2})).toBe(4);
+    });
 });
 
-test('properly return null when no argument is passed to askQuestion', () => {
-    expect(humanPlayer().askQuestion()).toBe(null);
+describe('askQuestion', () => {
+    it('properly return null when no argument is passed', () => {
+        expect(humanPlayer().askQuestion()).toBe(null);
+    }); 
 });
 
-test('properly invoke function passed as an argument to giveAnswer', () => {
+describe('giveAnswer', () => {
+    it('properly invoke function passed as an argument', () => { 
     expect(humanPlayer().giveAnswer(function(){return 2+2})).toBe(4);
+    });
 });
 
-test('properly return null when no argument is passed to giveAnswer', () => {
-    expect(humanPlayer().giveAnswer()).toBe(null);
+describe('giveAnswer', () => {
+    it('properly return null when no argument is passed', () => {
+        expect(humanPlayer().giveAnswer()).toBe(null);
+    }); 
 });

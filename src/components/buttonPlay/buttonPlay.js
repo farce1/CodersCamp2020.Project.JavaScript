@@ -1,14 +1,11 @@
 export const buttonPlay = (label = ' ', onClick) => {
-  const buttonTemplateHTML = `
-    <button class='gameButton gameButton_play'>
-      ${label}
-    </button>
-    `;
+  const component = document.createElement('button');
+  component.className = 'gameButton gameButton_play';
+  component.innerText = label;
+  component.onClick = onClick;
 
   if (onClick) {
-    buttonPlay.addEventListener('click', onClick);
+    component.addEventListener('click', onClick);
   }
-  return buttonTemplateHTML;
+  return component;
 };
-
-module.exports = buttonPlay;

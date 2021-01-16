@@ -1,19 +1,19 @@
 .rank {
   width: 60vw;
   height: 60vh;
+  max-height: 350px;
   display: flex;
   flex-direction: column;
   background: var(--nav-bg);
-  box-shadow: 0 4px 4px var(--internal-dark-shadow),
-  4px 4px 40px var(--external-red-shadow);
   border-radius: 16px;
-  margin:10px;
+  overflow: auto;
   .header__rank {
     h1{
       font-family: "Montserrat", sans-serif;
       color: var(--black-font);
       font-size: 2.5rem;
       font-weight: 500;
+      padding: 0 40px;
     }
     width: 100%;
     margin-top: 20px;
@@ -23,24 +23,29 @@
     align-items: center;
     justify-content: center;
     span {
-      background: black;
+      background: url("../../static/assets/ui/icons/icon-contacts_24px.png");
       background-size: cover;
       font-weight: bold;
-      width: 32px;
-      height: 32px;
-      margin: 0 16px;
+      width: 42px;
+      height: 50px;
     }
   }
   .user_list__rank {
     display: grid;
     grid-template-columns: 1fr 3fr 2fr;
     .user_list_item{
-      padding: 20px;
+      padding: 40px 60px;
     }
     h2{
       font-weight: 600;
       font-family: "Montserrat", sans-serif;
       font-size: 2rem;
+    }
+    p{
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 2rem;
+      margin: 10px 0;
     }
   }
 

@@ -1,4 +1,5 @@
-export const rankMode = (listUsers = [["Player 1", "-/-"],["Player 2", "-/-"],["Player 3", "-/-"]]) => {
+
+export const rankMode = (listUsers = []) => {
 
   //Create elements
   const component = document.createElement('div');
@@ -15,7 +16,8 @@ export const rankMode = (listUsers = [["Player 1", "-/-"],["Player 2", "-/-"],["
     <span></span>
     <h1>Mode Ranking</h1>
   `
-  user_list.innerHTML = `
+  if(listUsers.length > 2){
+    user_list.innerHTML = `
     <div class='user_list_item'>
       <h2>Place</h2>
       <p>1st</p>
@@ -35,6 +37,7 @@ export const rankMode = (listUsers = [["Player 1", "-/-"],["Player 2", "-/-"],["
       <p>${listUsers[2][1]}</p>
     </div>
   `
+  }
 
   //Add element to component
   component.appendChild(header);

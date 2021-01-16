@@ -13,17 +13,11 @@ describe('Test text timer', () => {
     </div>`;
     renderComponentIntoSelectedTag(TimerText(), 'swquiz-header');
   });
+
   it('Should display correctly', () => {
     expect(
       getByTestId(document.documentElement, 'html-txt-timer'),
     ).toBeInTheDocument();
-  });
-  it('Should start interval correctly', () => {
-    expect(setInterval).toHaveBeenCalled();
-    jest.advanceTimersByTime(130000);
-    expect(
-      getByTestId(document.documentElement, 'html-txt-timer').innerText,
-    ).toBe('0m 00s');
   });
 
   it('start interval correctly', () => {
@@ -34,8 +28,15 @@ describe('Test text timer', () => {
     ).toBe('1m 51s');
   });
 
-  it('Should stop', () => {
+  it('Should start interval correctly', () => {
+    expect(setInterval).toHaveBeenCalled();
     jest.advanceTimersByTime(130000);
+    expect(
+      getByTestId(document.documentElement, 'html-txt-timer').innerText,
+    ).toBe('0m 00s');
+  });
+
+  it('Should stop', () => {
     expect(clearInterval).toHaveBeenCalled();
   });
 });

@@ -18,7 +18,6 @@ const gameNavigationTemplateHTML = `
 function onClickHandler(btn, callback) {
   btn.classList.add('clicked');
   callback && callback(btn.innerText, questionPanel);
-  console.log(btn.innerText);
 }
 
 const createHtmlNavigationElement = (navigation) => {

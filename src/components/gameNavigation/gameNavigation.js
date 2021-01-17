@@ -1,5 +1,6 @@
 import { people, starships, vehicles } from '../../constants';
 import { renderComponentIntoSelectedTag } from '../../utils/functions';
+import { questionPanel } from '../../app/App';
 
 export const gameNavigation = (callback) => {
   const navigation = document.createElement('div');
@@ -16,8 +17,8 @@ const gameNavigationTemplateHTML = `
 
 function onClickHandler(btn, callback) {
   btn.classList.add('clicked');
-  callback && callback(btn.innerText);
-  console.log(btn.innerText)
+  callback && callback(btn.innerText, questionPanel);
+  console.log(btn.innerText);
 }
 
 const createHtmlNavigationElement = (navigation) => {

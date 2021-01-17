@@ -1,7 +1,4 @@
 export class QuestionPanel {
-  qPanelComponent = null;
-  constructor(label) {}
-
   render(label) {
     this.qPanelComponent = document.createElement('div');
     this.qPanelComponent.classList.add('q-panel');

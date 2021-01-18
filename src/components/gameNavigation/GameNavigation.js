@@ -1,11 +1,10 @@
 import { people, starships, vehicles } from '../../constants';
-import { renderComponentIntoSelectedTag } from '../../utils/functions';
 
 export const gameNavigation = (callback) => {
   const navigation = document.createElement('div');
   createHtmlNavigationElement(navigation);
-  renderComponentIntoSelectedTag(navigation, 'swquiz-header');
   addClickListenerForNavigationButtons(navigation, callback);
+  return navigation
 };
 
 const gameNavigationTemplateHTML = `

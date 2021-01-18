@@ -69,7 +69,8 @@ export const gameOver = (userAnswers, computerAnswers, onClick) => {
         e.preventDefault();
         let inputValue = document.querySelector("input").value;
         let userScore = correctUserAnswers.length;
-        onClick(inputValue, userScore);
+        let mode;
+        onClick(mode = ' ', inputValue, userScore);
         component.parentElement.removeChild(component);
     });
 
@@ -78,7 +79,7 @@ export const gameOver = (userAnswers, computerAnswers, onClick) => {
 }
 
 
-export const userAnswers = (quizSummary) => {
+const getUserAnswers = (quizSummary) => {
     let answers = [];
     quizSummary.forEach(q => {
         let playerAnswer = q.user;
@@ -90,7 +91,7 @@ export const userAnswers = (quizSummary) => {
     });
     return answers;
 }
-export const computerAnswers = (quizSummary) => {
+const getComputerAnswers = (quizSummary) => {
     let answers = [];
     quizSummary.forEach(q => {
         let playerAnswer = q.computer;
@@ -102,3 +103,6 @@ export const computerAnswers = (quizSummary) => {
     });
     return answers;
 }
+
+export const userAnswers = getUserAnswers(quizSummary);
+export const computerAnswers = getComputerAnswers(quizSummary);

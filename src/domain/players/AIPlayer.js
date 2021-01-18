@@ -1,8 +1,10 @@
+import { getRandomInt } from '../../helpers/index';
+
 const AIPlayer = () => {
     const player = {
         onQuestionAsked: ask => {
             const question = ask();
-            const randomId = Math.floor(Math.random() * 4);
+            const randomId = getRandomInt(0, 4);
             return player.giveAnswer(() => question.answers[randomId]);
         },
         onAnswerGiven: answer => answer(),

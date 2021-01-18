@@ -1,6 +1,6 @@
 import { questions, starships, vehicles } from '../constants';
 
-export const renderComponentIntoSelectedTag = (component, targetID) => {
+export const renderComponentIntoSelectedTagID = (component, targetID) => {
   if (!component || !targetID) {
     return;
   }
@@ -23,3 +23,5 @@ export const onMenuItemClick = (category, questionPanel) => {
   
   questionPanel.changeLabel(currentQuestion);
 };
+
+export const hideElement = (modal) =>modal ? modal.hide(): null;

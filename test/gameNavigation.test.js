@@ -1,8 +1,9 @@
-import { gameNavigation } from '../src/components/gameNavigation/gameNavigation';
+import { gameNavigation } from '../src/components/gameNavigation/GameNavigation';
 import '@testing-library/jest-dom';
 import { getByTestId } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
 import { people, starships, vehicles } from '../src/constants';
+import { renderComponentIntoSelectedTagID } from '../src/utils/functions';
 
 describe('Test game navigation', () => {
   beforeAll(() => {
@@ -16,6 +17,7 @@ describe('Test game navigation', () => {
   });
 
   it('Should render navigation correctly', () => {
+    renderComponentIntoSelectedTagID(gameNavigation(()=>{}), 'swquiz-header');
     expect(
       getByTestId(document.documentElement, 'html-navigation'),
     ).toBeInTheDocument();

@@ -5,8 +5,8 @@ import { questionPanel } from '../../app/App';
 export const gameNavigation = (callback) => {
   const navigation = document.createElement('div');
   createHtmlNavigationElement(navigation);
-  renderComponentIntoSelectedTag(navigation, 'swquiz-header');
   addClickListenerForNavigationButtons(navigation, callback);
+  return navigation
 };
 
 const gameNavigationTemplateHTML = `

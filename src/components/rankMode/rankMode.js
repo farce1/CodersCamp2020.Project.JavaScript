@@ -16,7 +16,7 @@ export const rankMode = (listUsers = []) => {
     <span></span>
     <h1>Mode Ranking</h1>
   `
-  if(listUsers.length > 0 || listUsers.length === 0){
+  if(listUsers.length >= 0){
     user_list.innerHTML = `
     <div class='user_list_item'>
       <h2>Place</h2>

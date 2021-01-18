@@ -18,4 +18,4 @@ export const iconButton = (text = 'text', icon, onClick = defaultFunction()) => 
     }
 
     return component;
-}
+};

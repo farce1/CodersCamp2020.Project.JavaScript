@@ -4,6 +4,7 @@ body {
   background-image: url('../../static/assets/ui/QuizBackground.png');
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
 }
 
 #swquiz-app{
@@ -14,11 +15,31 @@ body {
   min-height: 100%;
 }
 
+.wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
 .header {
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2%;
+  width: 35%;
+  overflow: hidden;
 }
+
+.logo-a {
+  width: 100%;
+}
+
 .logo {
-  // width: 485px;
-  // height: 228px;
-  margin: auto;
+  width: 100%;
+}
+
+.interactive{
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  width: 65%;
 }

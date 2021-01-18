@@ -12,7 +12,7 @@ export default class QuestionGenerator {
     const generatedAnswers = await this.generateAnswers();
 
     const base64Image = await this.getImageforRightAnswer(
-      mode,
+      this.mode,
       generatedAnswers.rightAnswer.id,
     );
     const { answers, rightAnswer } = generatedAnswers;

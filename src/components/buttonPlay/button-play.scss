@@ -1,0 +1,22 @@
+.gameButton {
+    box-shadow: 0px 4px 4px $shadow-color;
+    border-radius: 16px;
+    width: 37.5rem;
+    height: 6.25rem;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 2.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+}
+
+.gameButton:active {
+    transform: scale(0.99);
+}
+
+.gameButton_play {
+    background: $color-buttonPlay--primary;
+    color: $color-font--buttonPlay;
+    text-transform: uppercase;
+}

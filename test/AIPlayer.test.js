@@ -1,12 +1,6 @@
 import AIPlayer from '../src/domain/players/AIPlayer';
 
 describe('askQuestion', () => {
-    it('should invoke function passed as an argument', () => { 
-    expect(humanPlayer().askQuestion(function(){return 2+2})).toBe(4);
-    });
-});
-
-describe('askQuestion', () => {
     it('should return null when no argument is passed', () => {
         expect(AIPlayer().askQuestion()).toBe(null);
     }); 

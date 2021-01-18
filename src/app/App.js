@@ -1,6 +1,5 @@
 import { gameNavigation } from '../components/gameNavigation/gameNavigation';
 import { modeRules } from '../components/modeRules/modeRules';
-import { gameNavigation } from '../components/gameNavigation/gameNavigation.js';
 import { TimerText } from '../components/timerTxt/TimerText';
 import { renderComponentIntoSelectedTagID } from '../utils/functions';
 import { QuestionPanel } from '../components/questionPanel/QuestionPanel';

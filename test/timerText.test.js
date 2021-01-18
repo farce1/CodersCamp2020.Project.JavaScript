@@ -1,6 +1,6 @@
 import { getByTestId } from '@testing-library/dom';
 import { TimerText } from '../src/components/timerTxt/TimerText';
-import { renderComponentIntoSelectedTag } from '../src/utils/functions';
+import { renderComponentIntoSelectedTagID } from '../src/utils/functions';
 import '@testing-library/jest-dom';
 
 jest.useFakeTimers();
@@ -11,7 +11,7 @@ describe('Test text timer', () => {
       <div id="swquiz-header" class="header">
       </div>
     </div>`;
-    renderComponentIntoSelectedTag(TimerText(), 'swquiz-header');
+    renderComponentIntoSelectedTagID(TimerText(), 'swquiz-header');
   });
 
   it('Should display correctly', () => {

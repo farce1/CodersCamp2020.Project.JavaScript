@@ -3,9 +3,17 @@
 body {
   background-image: url('../../static/assets/ui/QuizBackground.png');
   background-repeat: no-repeat;
-
   background-size: cover;
 }
+
+#swquiz-app{
+  min-height: 100%;
+}
+
+#app-structure{
+  min-height: 100%;
+}
+
 .header {
   display: flex;
 }

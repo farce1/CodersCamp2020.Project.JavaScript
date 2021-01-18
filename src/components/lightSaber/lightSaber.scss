@@ -1,0 +1,47 @@
+body{
+    
+}
+
+.lightSaberHandle{
+    
+position:absolute;
+width: 315px;
+height: 65px;
+left: 0px;
+top: 0px;
+background-repeat: no-repeat;
+background-position: center;
+    
+
+}
+.lightBar{
+    position: absolute;
+    width: 1480px;
+    height: 65px;
+    left: 0px;
+     top: 0px;
+    display:flex;
+    flex-direction: column;
+    
+    
+}
+
+.lightSaberProcessBar{
+position: absolute;
+width: 1480px;
+height: 24px;
+left: 278px;
+top: 21px;
+background-color:  #BCBCBC;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+}
+
+.LightProcessBar{
+position: absolute;
+width: 1480px;
+height: 100%;
+background: #FFFFFF;
+box-shadow: 10px -5px 15px #FF0000, 10px 5px 15px #FF0000, inset 0px 5px 4px rgba(255, 0, 0, 0.25);
+border-radius: 8px;
+}

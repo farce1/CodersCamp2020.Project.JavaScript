@@ -7,27 +7,29 @@
 	display: flex;
 	flex-direction: row;
 	height: 100px;
-	justify-content: space-between;
+	justify-content: center;
 	position: relative;
-	width: 575px;
+	width: 24vw;
+
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+	font-weight: 500;
+
 	&:hover {
 		cursor: pointer;
 	}
 	&:active {
 		transform: scale(0.99);
 	}
-	&.iconButton__icon {
+	span {
 		color: black;
-		font-family: 'Montserrat', sans-serif;
-		font-size: 42px;
-		font-weight: 500;
-		height: 48px;
+		background-size: cover;
+		height: 50px;
+		width: 50px;
 		line-height: 51.2px;
-		margin-left: 40px;
-		position: absolute;
 		text-align: center;
-		top: 24px;
-		width: 48px;
-		width: 100%;
+		position: absolute;
+		left: 20px;
 	}
 }
+

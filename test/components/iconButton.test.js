@@ -1,4 +1,4 @@
-import { iconButton } from '../../src/components/iconButton.js'
+import { iconButton } from '../../src/components/iconButton/iconButton.js'
 import '@testing-library/jest-dom'
 
 describe('iconButton', () => {
@@ -14,7 +14,7 @@ describe('iconButton', () => {
         
         const component = iconButton(text);
 
-        expect(component.innerText).toEqual(text);
+        expect(component.innerHTML).toEqual(text);
     });
 
     it('should show icon when given icon property', () => {
@@ -28,10 +28,9 @@ describe('iconButton', () => {
 
     it('should not show icon when icon property not provided', () => {
         const text = 'label';
-        
+
         const component = iconButton(text);
-        
-        expect(component.firstChild).toBeNull();
+        expect(component.firstChild).not.toBe('span')
     });
 
     it('should invoke onClick function', () => {

@@ -2,13 +2,16 @@
 @import 'mixins';
 @import 'normalize';
 @import 'app';
-@import "variables";
-
-
+@import 'variables';
 // Components
-
+@import '../components/buttonPlay/button-play';
 // ex. @import 'components/red-button-styles';
 
-@import "../components/gameNavigation/gameNavigation";
+
+@import "../components/gameNavigation/game-navigation";
 @import "../components/iconButton/iconButton";
 @import "../components/rankMode/rankMode";
+
+@import "../components/gameNavigation/game-navigation";
+@import "../components/commonModal/common-modal";
+

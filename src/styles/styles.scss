@@ -7,11 +7,10 @@
 @import '../components/buttonPlay/button-play';
 // ex. @import 'components/red-button-styles';
 
-
-@import "../components/gameNavigation/game-navigation";
 @import "../components/iconButton/iconButton";
 @import "../components/rankMode/rankMode";
-
+@import "../components/questionPanel/question-panel";
 @import "../components/gameNavigation/game-navigation";
 @import "../components/commonModal/common-modal";
+@import '../components/modeRules/modeRules.scss';
 

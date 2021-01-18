@@ -1,3 +1,5 @@
+import { gameNavigation } from '../components/gameNavigation/gameNavigation';
+import { modeRules } from '../components/modeRules/modeRules';
 import { gameNavigation } from '../components/gameNavigation/gameNavigation.js';
 import { TimerText } from '../components/timerTxt/TimerText';
 import { renderComponentIntoSelectedTagID } from '../utils/functions';
@@ -12,7 +14,14 @@ export const App = ({ options }) => {
   renderComponentIntoSelectedTagID(  TimerText(), 'swquiz-header');
   renderComponentIntoSelectedTagID(gameNavigation(questionPanel), 'swquiz-header');
   renderComponentIntoSelectedTagID(
+    gameNavigation(questionPanel),
+    'swquiz-header');
+  renderComponentIntoSelectedTagID(
     questionPanel.render(),
-    'swquiz-app',
+    'swquiz-app'
+  );
+  renderComponentIntoSelectedTagID(
+    modeRules(),
+    'swquiz-app'
   );
 };

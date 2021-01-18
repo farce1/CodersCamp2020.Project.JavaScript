@@ -1,6 +1,6 @@
 import { iconButton } from '../components/iconButton/iconButton';
 import { buttonPlay } from '../components/buttonPlay/buttonPlay.js';
-import { gameNavigation } from '../components/gameNavigation/gameNavigation.js';
+import { gameNavigation } from '../components/gameNavigation/GameNavigation.js';
 import { rankMode } from '../components/rankMode/rankMode';
 import { CommonModal } from '../components/commonModal/CommonModal';
 import { hideElement, renderComponentIntoSelectedTagID } from '../utils/functions';

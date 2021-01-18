@@ -1,9 +1,10 @@
 import { people, starships, vehicles } from '../../constants';
+import { renderComponentIntoSelectedTag } from '../../utils/functions';
 
-export const gameNavigation = (callback) => {
+export const gameNavigation = (questionPanel) => {
   const navigation = document.createElement('div');
   createHtmlNavigationElement(navigation);
-  addClickListenerForNavigationButtons(navigation, callback);
+  addClickListenerForNavigationButtons(navigation, questionPanel);
   return navigation
 };
 
@@ -13,9 +14,9 @@ const gameNavigationTemplateHTML = `
 <div data-testid='${starships}' class='nav-btn'>Starships</div>
 `;
 
-function onClickHandler(btn, callback) {
+function onClickHandler(btn, questionPanel) {
   btn.classList.add('clicked');
-  callback && callback();
+  questionPanel && questionPanel.changeLabel(btn.innerText);
 }
 
 const createHtmlNavigationElement = (navigation) => {
@@ -27,13 +28,13 @@ const createHtmlNavigationElement = (navigation) => {
   return navHtmlElement;
 };
 
-const addClickListenerForNavigationButtons = (navigation, callback) => {
+const addClickListenerForNavigationButtons = (navigation, questionPanel) => {
   Array.from(navigation.children).forEach((btn) =>
     btn.addEventListener('click', () => {
       Array.from(navigation.children).forEach((btn) =>
         btn.classList.remove('clicked'),
       );
-      onClickHandler(btn, callback);
+      onClickHandler(btn, questionPanel);
     }),
   );
 };

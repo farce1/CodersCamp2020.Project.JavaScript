@@ -16,7 +16,7 @@ export const rankMode = (listUsers = []) => {
     <span></span>
     <h1>Mode Ranking</h1>
   `
-  if(listUsers.length > 2){
+  if(listUsers.length > 0 || listUsers.length === 0){
     user_list.innerHTML = `
     <div class='user_list_item'>
       <h2>Place</h2>
@@ -24,19 +24,32 @@ export const rankMode = (listUsers = []) => {
       <p>2nd</p>
       <p>3rd</p>
     </div>
-    <div class='user_list_item'>
+    <div class='user_list_item' id='rank_player'>
       <h2>Player</h2>
-      <p>${listUsers[0][0]}</p>
-      <p>${listUsers[1][0]}</p>
-      <p>${listUsers[2][0]}</p>
+      <p>Player 1</p>
+      <p>Player 2</p>
+      <p>Player 3</p>
     </div>
-    <div class='user_list_item'>
+    <div class='user_list_item' id='rank_answered'>
       <h2>Answered</h2>
-      <p>${listUsers[0][1]}</p>
-      <p>${listUsers[1][1]}</p>
-      <p>${listUsers[2][1]}</p>
+      <p>-/-</p>
+      <p>-/-</p>
+      <p>-/-</p>
     </div>
   `
+  }
+  if(listUsers.length > 0){
+    user_list.querySelector('#rank_player p:nth-child(2)').innerHTML = `${listUsers[0][0]}`;
+    user_list.querySelector('#rank_answered p:nth-child(2)').innerHTML = `${listUsers[0][1]}`;
+
+  }
+  if(listUsers.length > 1){
+    user_list.querySelector('#rank_player p:nth-child(3)').innerHTML = `${listUsers[1][0]}`;
+    user_list.querySelector('#rank_answered p:nth-child(3)').innerHTML = `${listUsers[1][1]}`;
+  }
+  if(listUsers.length > 2){
+    user_list.querySelector('#rank_player p:nth-child(4)').innerHTML = `${listUsers[2][0]}`;
+    user_list.querySelector('#rank_answered p:nth-child(4)').innerHTML = `${listUsers[2][1]}`;
   }
 
   //Add element to component

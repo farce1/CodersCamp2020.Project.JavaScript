@@ -1,9 +1,9 @@
-export const people = 'people';
-export const vehicles = 'vehicles';
-export const starships = 'starships';
+export const people = 'People';
+export const vehicles = 'Vehicles';
+export const starships = 'Starships';
 
 export const questions = {
-  peopleQuestion: 'Who is this character?',
-  vehiclesQuestion: 'Do you recognize this vehicle?',
-  starshipsQuestion: 'Do you recognize this starship?',
+  [people]: 'Who is this character?',
+  [vehicles]: 'Do you recognize this vehicle?',
+  [starships]: 'Do you recognize this starship?',
 };

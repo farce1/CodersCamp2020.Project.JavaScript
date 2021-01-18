@@ -4,7 +4,7 @@ import { questions, vehicles } from '../src/constants';
 import { QuestionPanel } from '../src/components/questionPanel/QuestionPanel';
 import {
   onMenuItemClick,
-  renderComponentIntoSelectedTag,
+  renderComponentIntoSelectedTagID,
 } from '../src/utils/functions';
 
 describe('Test question-panel', () => {
@@ -14,10 +14,9 @@ describe('Test question-panel', () => {
       <div id="swquiz-header" class="header">
       </div>
     </div>`;
-    let currentQuestion = questions.peopleQuestion;
-
-    renderComponentIntoSelectedTag(
-      questionPanel.render(currentQuestion),
+    
+    renderComponentIntoSelectedTagID(
+      questionPanel.render(),
       'swquiz-app',
     );
   });
@@ -29,9 +28,9 @@ describe('Test question-panel', () => {
   });
 
   it('should update label properly', () => {
-    onMenuItemClick(vehicles, questionPanel);
+    questionPanel.changeLabel(vehicles)
     expect(questionPanel.qPanelComponent.innerHTML).toBe(
-      `MODE: ${questions.vehiclesQuestion}`,
+      `MODE: ${questions[vehicles]}`,
     );
   });
 });

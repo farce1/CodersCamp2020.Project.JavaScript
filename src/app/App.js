@@ -1,19 +1,15 @@
 import { gameNavigation } from '../components/gameNavigation/gameNavigation.js';
 import {
-  onMenuItemClick,
-  renderComponentIntoSelectedTag,
+  renderComponentIntoSelectedTagID,
 } from '../utils/functions';
 import { QuestionPanel } from '../components/questionPanel/QuestionPanel';
-import { questions } from '../constants';
 
-let currentQuestion = questions.peopleQuestion;
-
-export const questionPanel = new QuestionPanel();
+const questionPanel = new QuestionPanel();
 
 export const App = ({ options }) => {
-  gameNavigation(onMenuItemClick);
-  renderComponentIntoSelectedTag(
-    questionPanel.render(currentQuestion),
+  renderComponentIntoSelectedTagID(gameNavigation(questionPanel), 'swquiz-header');
+  renderComponentIntoSelectedTagID(
+    questionPanel.render(),
     'swquiz-app',
   );
     // renderComponentIntoSelectedTagID - funkcja do renderowania komponentu w odpowiednim miejscu np.:

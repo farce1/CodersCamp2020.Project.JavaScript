@@ -4,6 +4,8 @@ import { TimerText } from '../components/timerTxt/TimerText';
 import { renderComponentIntoSelectedTagID } from '../utils/functions';
 import { QuestionPanel } from '../components/questionPanel/QuestionPanel';
 import { peopleImage } from '../components/PeopleImage/peopleImage';
+import { iconButton } from '../components/iconButton/iconButton';
+import { buttonPlay } from '../components/buttonPlay/buttonPlay';
 
 const questionPanel = new QuestionPanel();
 
@@ -13,15 +15,15 @@ export const App = ({ options }) => {
     'swquiz-header');
   renderComponentIntoSelectedTagID(
     gameNavigation(questionPanel),
-    'swquiz-interactive');
+    'swquiz-game-intro');
   renderComponentIntoSelectedTagID(
     questionPanel.render(),
-    'swquiz-interactive'
+    'swquiz-game-intro'
   );
   renderComponentIntoSelectedTagID(
     modeRules(),
-    'swquiz-interactive'
+    'swquiz-game-intro'
   );
-  renderComponentIntoSelectedTagID(iconButton('Hall of fame',icon), 'swquiz-interactive')
-  renderComponentIntoSelectedTagID(buttonPlay('play the game'), 'swquiz-interactive')
+  renderComponentIntoSelectedTagID(iconButton('Hall of fame', ""), 'swquiz-game-btns');
+  renderComponentIntoSelectedTagID(buttonPlay('play the game'), 'swquiz-game-btns')
 };

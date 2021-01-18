@@ -1,4 +1,4 @@
-import { iconButton } from '../../src/components/iconButton.js'
+import { iconButton } from '../../src/components/iconButton/iconButton.js'
 import '@testing-library/jest-dom'
 
 describe('iconButton', () => {

@@ -1,15 +1,13 @@
 .iconButton {
-	align-items: center;
 	background: #fff;
 	border: none;
 	border-radius: 16px;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-	display: flex;
-	flex-direction: row;
-	height: 100px;
-	justify-content: space-between;
+	font-size: 24px;
+	text-align: center;
 	position: relative;
-	width: 575px;
+	width: 49%;
+	height: 100px;
 	&:hover {
 		cursor: pointer;
 	}
@@ -19,15 +17,15 @@
 	&.iconButton__icon {
 		color: black;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 42px;
+		font-size: 24px;
 		font-weight: 500;
-		height: 48px;
-		line-height: 51.2px;
+		//height: 48px;
+		//line-height: 51.2px;
 		margin-left: 40px;
 		position: absolute;
 		text-align: center;
 		top: 24px;
 		width: 48px;
-		width: 100%;
+		//width: 100%;
 	}
 }

@@ -8,15 +8,18 @@ export const renderComponentIntoSelectedTag = (component, targetID) => {
 };
 
 export const onMenuItemClick = (category, questionPanel) => {
-  let currentQuestion = questions.peopleQuestion;
+  const currentQuestion = questions.peopleQuestion;
 
-  category = category.toLowerCase();
-  if (category === vehicles) {
-    currentQuestion = questions.vehiclesQuestion;
-  } else if (category === starships) {
-    currentQuestion = questions.starshipsQuestion;
-  } else {
-    currentQuestion = questions.peopleQuestion;
+  switch(category) {
+    case vehicles:
+      return currentQuestion = questions.vehiclesQuestion;
+      break;
+    case starships:
+      return currentQuestion = questions.starshipsQuestion;
+      break;
+    default:
+      return currentQuestion = questions.peopleQuestion;
   }
+  
   questionPanel.changeLabel(currentQuestion);
 };

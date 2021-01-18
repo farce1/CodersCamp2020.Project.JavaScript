@@ -1,4 +1,4 @@
-import { gameNavigation } from '../components/gameNavigation/gameNavigation';
+import { gameNavigation } from '../components/gameNavigation/GameNavigation';
 import { modeRules } from '../components/modeRules/modeRules';
 import { TimerText } from '../components/timerTxt/TimerText';
 import { renderComponentIntoSelectedTagID } from '../utils/functions';

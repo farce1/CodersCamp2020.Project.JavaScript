@@ -1,5 +1,4 @@
 import { people, starships, vehicles } from '../../constants';
-import { renderComponentIntoSelectedTag } from '../../utils/functions';
 
 export const gameNavigation = (questionPanel) => {
   const navigation = document.createElement('div');

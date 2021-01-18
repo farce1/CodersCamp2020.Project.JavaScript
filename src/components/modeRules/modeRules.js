@@ -1,12 +1,13 @@
-import './modeRules.scss';
+import rulesIconSrc from '../../../static/assets/ui/rulesIcon.png';
+
 export const modeRules = (rules = '') => {
   const element = document.createElement('div');
   element.className = 'rules';
-  const header = document.createElement('h2');
-  header.textContent = 'Mode rules';
-  element.appendChild(header);
-  const paragraph = document.createElement('p');
-  paragraph.innerText = rules;
-  element.appendChild(paragraph);
+  const template = `<div class="rules__header" >
+    <img class="rules__icon" src="${rulesIconSrc}" alt="rules icon" />
+    <h2 >Mode rules</h2>
+  </div>
+  <p>${rules}</p>`;
+  element.innerHTML = template;
   return element;
 };

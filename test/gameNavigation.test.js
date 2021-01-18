@@ -1,18 +1,21 @@
-import { gameNavigation } from '../src/components/gameNavigation/gameNavigation';
+import { gameNavigation } from '../src/components/gameNavigation/GameNavigation';
 import '@testing-library/jest-dom';
 import { getByTestId } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
 import { people, starships, vehicles } from '../src/constants';
+import { renderComponentIntoSelectedTagID } from '../src/utils/functions';
+import { QuestionPanel } from '../src/components/questionPanel/QuestionPanel';
 
 describe('Test game navigation', () => {
   beforeAll(() => {
+    const questionPanel = new QuestionPanel();
     const swquizApp = document.createElement('div');
     swquizApp.setAttribute('id', 'swquiz-app');
     document.body.appendChild(swquizApp);
     const swquizHeader = document.createElement('div');
     swquizHeader.setAttribute('id', 'swquiz-header');
     swquizApp.appendChild(swquizHeader);
-    gameNavigation();
+    renderComponentIntoSelectedTagID(gameNavigation(questionPanel), 'swquiz-header');
   });
 
   it('Should render navigation correctly', () => {

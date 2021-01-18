@@ -5,7 +5,13 @@
 @import 'variables';
 // Components
 @import '../components/buttonPlay/button-play';
+<<<<<<< HEAD
 @import '../components/gameOver/game-over';
+=======
+>>>>>>> main
 // ex. @import 'components/red-button-styles';
 
-@import "../components/gameNavigation/gameNavigation";
+@import "../components/questionPanel/question-panel";
+@import "../components/gameNavigation/game-navigation";
+@import "../components/commonModal/common-modal";
+@import '../components/modeRules/modeRules.scss';

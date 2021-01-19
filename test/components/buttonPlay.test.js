@@ -1,6 +1,6 @@
 import {
     buttonPlay
-} from '../../src/components/buttonPlay/ButtonPlay';
+} from '../../src/components/buttonPlay/buttonPlay';
 import '@testing-library/jest-dom'
 
 describe('buttonPlay', () => {

@@ -13,6 +13,10 @@ export class QuestionPanel {
     return this.qPanelComponent;
   }
 
+  hide() {
+    this.qPanelComponent.style.display = 'none';
+  }
+
   changeLabel(gameMode) {
     const newGameModeQuestion = questions[gameMode];
     this.currentGameMode = newGameModeQuestion;

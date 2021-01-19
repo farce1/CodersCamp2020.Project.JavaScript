@@ -3,7 +3,16 @@
     const component= document.createElement('div');
     component.style.backgroundImage=`url("${src}")`;
     component.className="peopleImage";
-    return component;
+    
+    const image = {
+        render() {
+            return component;
+        },
+        hide() {
+            component.style.display = 'none';
+        }
+    }
+    return image;
     }
 }
 

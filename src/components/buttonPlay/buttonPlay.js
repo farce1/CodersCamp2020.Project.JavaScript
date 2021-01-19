@@ -7,5 +7,15 @@ export const buttonPlay = (label = ' ', onClick) => {
   if (onClick) {
     component.addEventListener('click', onClick);
   }
-  return component;
+
+  const btn = {
+    render() {
+        return component;
+    },
+    
+    hide() {
+        component.style.display = 'none';
+    }
+}
+return btn;
 };

@@ -21,6 +21,11 @@ export class ModeRules {
     this.modeRulesDescription.innerText = this.currentRuleDescripton;
   }
 
+
+  hide() {
+    this.modeRulesPanelWrapper.style.display = 'none';
+  }
+
   render() {
     this.decorateElements()
     this.modeRulesPanel.appendChild(this.panelIcon)

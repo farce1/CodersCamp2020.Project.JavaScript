@@ -3,6 +3,7 @@ export const renderComponentIntoSelectedTagID = (component, targetID) => {
     return;
   }
   document.getElementById(`${targetID}`).appendChild(component);
+  return component;
 };
 
 export const renderComponent = (component, parent) => {
@@ -12,3 +13,7 @@ export const renderComponent = (component, parent) => {
 }
 
 export const hideElement = (modal) =>modal ? modal.hide(): null;
+
+export const insertAfter = (referenceNode, newNode) => {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}

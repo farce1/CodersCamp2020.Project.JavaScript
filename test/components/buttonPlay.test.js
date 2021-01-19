@@ -6,14 +6,14 @@ import '@testing-library/jest-dom'
 describe('buttonPlay', () => {
 
     it('should show buttonPlay', () => {
-        const component = buttonPlay();
+        const component = buttonPlay().render();
 
         expect(component).toBeTruthy();
     });
 
     it('should show button text', () => {
         const text = '123';
-        const component = buttonPlay(text);
+        const component = buttonPlay(text).render();
 
         expect(component.innerText).toEqual(text);
     });
@@ -21,7 +21,7 @@ describe('buttonPlay', () => {
     it('should invoke onClick function', () => {
         const text = 'label';
         const mockedOnClick = jest.fn();
-        const component = buttonPlay(text, mockedOnClick);
+        const component = buttonPlay(text, mockedOnClick).render();
         component.click();
 
         expect(mockedOnClick).toBeCalled();

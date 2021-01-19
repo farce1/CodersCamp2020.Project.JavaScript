@@ -1,19 +1,32 @@
 import { getByAltText, getByTestId, getByText } from '@testing-library/dom';
-import { modeRules } from '../../src/components/modeRules/modeRules';
-import { renderComponentIntoSelectedTag } from '../../src/utils/functions';
+import { ModeRules } from '../../src/components/modeRules/modeRules';
+import { renderComponentIntoSelectedTag, renderComponentIntoSelectedTagID } from '../../src/utils/functions';
 import '@testing-library/jest-dom/extend-expect';
-describe('modeRules', () => {
-  it('should render correctly', () => {
-    const component = modeRules();
-    expect(component).not.toBeNull();
-    expect(component.firstChild.children[1].textContent).toBe('Mode rules');
-    expect(component.firstChild.children[0].alt).toBe('rules icon');
+import { gameRules, vehicles } from '../../src/constants';
+describe('Mode rules', () => {
+  const modeRulesPanel = new ModeRules();
+  beforeAll(() => {
+    document.body.innerHTML = `<div id="swquiz-app">
+      <div id="swquiz-header" class="header">
+      </div>
+    </div>`;
+    
+    renderComponentIntoSelectedTagID(
+      modeRulesPanel.render(),
+      'swquiz-app',
+    );
   });
-  it('should show rules text', () => {
-    const text = 'abcdefg';
 
-    const component = modeRules(text);
+  it('should render properly', () => {
+    expect(
+      getByTestId(document.documentElement, 'rules-panel'),
+    ).toBeInTheDocument();
+  });
 
-    expect(component.children[1].textContent).toBe(text);
+  it('should update description properly', () => {
+    modeRulesPanel.changeRulesDescription(vehicles)
+    expect(modeRulesPanel.modeRulesDescription.innerText).toBe(
+       `${gameRules[vehicles]}`
+    );
   });
 });

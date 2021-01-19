@@ -1,6 +1,6 @@
-const defaultFunction = () => 'default';
+const defaultFunction = () => console.log('default');
 
-export const iconButton = (text = 'text', icon, onClick = defaultFunction()) => {
+export const iconButton = (text = 'text', icon, onClick = defaultFunction)=> {
 
     const component = document.createElement('button');
 
@@ -10,10 +10,19 @@ export const iconButton = (text = 'text', icon, onClick = defaultFunction()) => 
     if (icon) {
     const spanElement = document.createElement('span');
     spanElement.className = 'button__icon';
-    spanElement.style.backgroundImage = `url("../static/assets/ui/icons/icon-${icon}.png")`;
+    spanElement.style.backgroundImage = `url("../static/assets/ui/icons/icon-${icon}_24px.png")`;
     component.appendChild(spanElement);
     }
     component.innerHTML += text;
 
-    return component;
-}
+    const btn = {
+        render() {
+            return component;
+        },
+        
+        hide() {
+            component.style.display = 'none';
+        }
+    }
+    return btn;
+};

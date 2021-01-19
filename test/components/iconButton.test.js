@@ -3,7 +3,7 @@ import '@testing-library/jest-dom'
 
 describe('iconButton', () => {
     it('should show iconButton', () => {
-        const component = iconButton();
+        const component = iconButton().render();
         
         expect(component).not.toBeNull();
         expect(component.innerHTML).not.toBeNull();
@@ -12,7 +12,7 @@ describe('iconButton', () => {
     it('should show button text', () => {
         const text = '123';
         
-        const component = iconButton(text);
+        const component = iconButton(text).render();
 
         expect(component.innerHTML).toEqual(text);
     });
@@ -21,7 +21,7 @@ describe('iconButton', () => {
         const text = 'label';
         const icon = '12345663445';
         
-        const component = iconButton(text, icon);
+        const component = iconButton(text, icon).render();
         
         expect(component.firstChild).toHaveClass('button__icon');
     });
@@ -29,7 +29,7 @@ describe('iconButton', () => {
     it('should not show icon when icon property not provided', () => {
         const text = 'label';
 
-        const component = iconButton(text);
+        const component = iconButton(text).render();
         expect(component.firstChild).not.toBe('span')
     });
 
@@ -38,7 +38,7 @@ describe('iconButton', () => {
         const icon = '12345663445';
         const mockedOnClick = jest.fn();
 
-        const component = iconButton(text, icon, mockedOnClick);
+        const component = iconButton(text, icon, mockedOnClick).render();
         
         component.click();
         

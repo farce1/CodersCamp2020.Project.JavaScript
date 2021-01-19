@@ -1,20 +1,14 @@
 .iconButton {
-	align-items: center;
 	background: #fff;
 	border: none;
 	border-radius: 16px;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-	display: flex;
-	flex-direction: row;
-	height: 100px;
-	justify-content: center;
+	font-size: 24px;
+	text-align: center;
 	position: relative;
-	width: 24vw;
-
+	width: 49%;
+	height: 100px;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 2rem;
-	font-weight: 500;
-
 	&:hover {
 		cursor: pointer;
 	}
@@ -23,12 +17,14 @@
 	}
 	span {
 		color: black;
+<<<<<<<<< Temporary merge branch 1:src/components/iconButton/iconButton.scss
 		background-size: cover;
-		height: 50px;
-		width: 50px;
+		height: 30px;
+		width: 30px;
 		line-height: 51.2px;
 		text-align: center;
 		position: absolute;
+		top: 24px;
 		left: 20px;
 	}
 }

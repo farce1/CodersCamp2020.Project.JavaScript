@@ -57,5 +57,13 @@ export const rankMode = (listUsers = []) => {
   component.appendChild(user_list)
 
   //Return a complete component
-  return component;
+  const rankList = {
+    render() {
+      return component;
+    },
+    hide() {
+      component.style.display = 'none';
+    }
+  }
+  return rankList;
 }

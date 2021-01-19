@@ -35,7 +35,7 @@ describe('iconButton', () => {
 
     it('should invoke onClick function', () => {
         const text = 'label';
-        const icon = '12345663445';
+        const icon = '123456634454';
         const mockedOnClick = jest.fn();
 
         const component = iconButton(text, icon, mockedOnClick).render();

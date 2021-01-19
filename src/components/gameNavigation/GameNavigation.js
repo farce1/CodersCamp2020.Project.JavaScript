@@ -1,9 +1,9 @@
 import { people, starships, vehicles } from '../../constants';
 
-export const gameNavigation = (questionPanel) => {
+export const gameNavigation = (questionPanel, modeRules) => {
   const navigation = document.createElement('div');
   createHtmlNavigationElement(navigation);
-  addClickListenerForNavigationButtons(navigation, questionPanel);
+  addClickListenerForNavigationButtons(navigation, questionPanel, modeRules);
   return navigation
 };
 
@@ -13,9 +13,11 @@ const gameNavigationTemplateHTML = `
 <div data-testid='${starships}' class='nav-btn'>Starships</div>
 `;
 
-function onClickHandler(btn, questionPanel) {
+function onClickHandler(btn, questionPanel, modeRules) {
+  const gameModeText = btn.innerText;
   btn.classList.add('clicked');
-  questionPanel && questionPanel.changeLabel(btn.innerText);
+  questionPanel && questionPanel.changeLabel(gameModeText);
+  modeRules && modeRules.changeRulesDescription(gameModeText);
 }
 
 const createHtmlNavigationElement = (navigation) => {
@@ -27,13 +29,13 @@ const createHtmlNavigationElement = (navigation) => {
   return navHtmlElement;
 };
 
-const addClickListenerForNavigationButtons = (navigation, questionPanel) => {
+const addClickListenerForNavigationButtons = (navigation, questionPanel, modeRules) => {
   Array.from(navigation.children).forEach((btn) =>
     btn.addEventListener('click', () => {
       Array.from(navigation.children).forEach((btn) =>
         btn.classList.remove('clicked'),
       );
-      onClickHandler(btn, questionPanel);
+      onClickHandler(btn, questionPanel, modeRules);
     }),
   );
 };

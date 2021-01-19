@@ -1,4 +1,4 @@
-import { MainMenu } from '../components/MainMenu/MainMenu';
+import { MainMenu } from '../components/mainMenu/MainMenu';
 
 
 export const App = ({ options }) => {
